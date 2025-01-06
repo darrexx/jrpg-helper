@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jrphelper.moe/uniqueMonster.schema.json",
+  "title": "uniqueMonster",
+  "description": "UniqueMonsters for a Game",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "level": {
+        "type": "integer"
+      },
+      "map": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      },
+      "x": {
+        "type": "string"
+      },
+      "y": {
+        "type": "string"
+      },
+      "z": {
+        "type": "string"
+      },
+      "wikiLink": {
+        "type": "string"
+      },
+      "spawnTime": {
+        "type": "string"
+      }
+    },
+    "required": ["name", "map"]
+  }
+}

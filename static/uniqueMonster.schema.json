@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "map": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        },
+        "wikiLink": {
+          "type": "string"
+        },
+        "spawnTime": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "map"]
+    }
+  ]
+}

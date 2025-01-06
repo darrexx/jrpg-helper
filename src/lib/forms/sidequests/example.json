@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Quest1",
+    "level": 1,
+    "map": "map1",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1"
+  },
+  {
+    "name": "Quest2",
+    "level": 1,
+    "map": "map1",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1"
+  },
+  {
+    "name": "Quest3",
+    "level": 1,
+    "map": "map1",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1"
+  },
+  {
+    "name": "Quest4",
+    "level": 4,
+    "map": "map4",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1"
+  },
+  {
+    "name": "Quest5",
+    "level": 4,
+    "map": "map4",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1"
+  },
+  {
+    "name": "Quest6",
+    "level": 4,
+    "map": "map2",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1",
+    "category": "Standard"
+  },
+  {
+    "name": "Quest7",
+    "level": 100,
+    "map": "map111",
+    "location": "location1",
+    "wikiLink": "https://lucide.dev",
+    "giver": "giver1",
+    "startX": "0.01",
+    "startY": "0.01",
+    "startZ": "0.01",
+    "prerequisites": "preq1",
+    "category": "Hero"
+  }
+]

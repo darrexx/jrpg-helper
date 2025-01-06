@@ -1,0 +1,90 @@
+[
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY1",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY2",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY3",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY4",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY5",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY6",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  {
+    "name": "ABCDEFGHIJKLMNOPQRSTUVWXY7",
+    "map": "ABCDEFGHIJKLMNOPQRST",
+    "level": 0,
+    "location": "ABCD",
+    "x": "0.01",
+    "y": "0.01",
+    "z": "0.01",
+    "wikiLink": "ABCDEFGHI",
+    "spawnTime": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  }
+]
