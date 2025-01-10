@@ -3,22 +3,22 @@
   import { Input } from '$lib/components/ui/input';
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
   import { Check, ChevronDown, ChevronUp, ListCheck, X } from 'lucide-svelte';
+  import debounce from 'lodash/debounce';
 
-  let { table = $bindable(), showCompleted = $bindable(), toggleComplete } = $props();
+  let { table, showCompleted = $bindable(), toggleComplete } = $props();
 
   let dropdownOpen = $state<boolean>(false);
+
+  const filter = debounce((e: Event) => {
+    table?.getColumn('name')?.setFilterValue((e.target as HTMLInputElement).value);
+  }, 500);
 </script>
 
 <div class="flex gap-2">
   <Input
     placeholder="Filter by Name..."
     value={(table?.getColumn('name')?.getFilterValue() as string) ?? ''}
-    onchange={(e) => {
-      table?.getColumn('name')?.setFilterValue(e.currentTarget.value);
-    }}
-    oninput={(e) => {
-      table?.getColumn('name')?.setFilterValue(e.currentTarget.value);
-    }}
+    oninput={filter}
     class=""
   />
   <DropdownMenu.Root bind:open={dropdownOpen}>
