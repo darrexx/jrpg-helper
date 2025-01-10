@@ -1,0 +1,15 @@
+on: [push]
+
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+jobs:
+  test:
+    runs-on: docker
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - run: corepack prepare pnpm@latest --activate
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm build
