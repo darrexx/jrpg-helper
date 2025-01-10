@@ -1,18 +1,24 @@
 <script lang="ts">
   import DataTable from '$lib/components/data-table.svelte';
-  import type { Row, Table } from '@tanstack/table-core';
+  import {
+    getCoreRowModel,
+    getFilteredRowModel,
+    getSortedRowModel,
+    type Row,
+    type TableOptions,
+  } from '@tanstack/table-core';
   import { columns } from './columns';
   import { localStore } from '$lib/localstorage.svelte';
   import type { SideQuest } from '$lib/models/sideQuests';
   import { getTableConfig } from './table.svelte';
   import SideQuestsActions from './SideQuestsActions.svelte';
+  import { createSvelteTable } from '$lib/components/ui/data-table/index.js';
 
   let { data } = $props();
   const sideQuests = data.sideQuests;
 
   let { tableState, onColumnFiltersChange, onRowSelectionChange, onSortingChange } =
     getTableConfig();
-  let table: Table<SideQuest> | undefined = $state();
 
   let completedSideQuests = localStore<number[]>(`${data.gameId}sideQuestIds`, []);
 
@@ -53,6 +59,21 @@
     }
     return '';
   };
+
+  const tableOptions: TableOptions<SideQuest> = {
+    get data() {
+      return mergedSideQuests;
+    },
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    state: tableState,
+    onSortingChange,
+    onRowSelectionChange,
+    onColumnFiltersChange,
+  };
+  let table = createSvelteTable(tableOptions);
 </script>
 
 <div class="m-2 grid grid-cols-3 items-center">
@@ -62,13 +83,4 @@
   </h1>
   <SideQuestsActions {toggleComplete} {table} bind:showCompleted></SideQuestsActions>
 </div>
-<DataTable
-  data={mergedSideQuests}
-  {columns}
-  {onRowSelectionChange}
-  {onSortingChange}
-  {onColumnFiltersChange}
-  state={tableState}
-  bind:table
-  {rowClassesFn}
-></DataTable>
+<DataTable {table} {rowClassesFn}></DataTable>

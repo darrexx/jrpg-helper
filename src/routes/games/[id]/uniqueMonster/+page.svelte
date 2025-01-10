@@ -1,18 +1,24 @@
 <script lang="ts">
   import DataTable from '$lib/components/data-table.svelte';
-  import type { Row, Table } from '@tanstack/table-core';
+  import {
+    getCoreRowModel,
+    getFilteredRowModel,
+    getSortedRowModel,
+    type Row,
+    type TableOptions,
+  } from '@tanstack/table-core';
   import { columns } from './columns';
   import { localStore } from '$lib/localstorage.svelte';
   import type { UniqueMonster } from '$lib/models/uniqueMonster';
   import { getTableConfig } from './table.svelte';
   import UniqueMonsterActions from './UniqueMonsterActions.svelte';
+  import { createSvelteTable } from '$lib/components/ui/data-table/index.js';
 
   let { data } = $props();
   const uniqueMonster = data.uniqueMonster;
 
   let { tableState, onColumnFiltersChange, onRowSelectionChange, onSortingChange } =
     getTableConfig();
-  let table: Table<UniqueMonster> | undefined = $state();
 
   let completedUniqueMonsters = localStore<number[]>(`${data.gameId}uniqueMonsterIds`, []);
 
@@ -53,6 +59,21 @@
     }
     return '';
   };
+
+  const tableOptions: TableOptions<UniqueMonster> = {
+    get data() {
+      return mergedUniqueMonsters;
+    },
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    state: tableState,
+    onSortingChange,
+    onRowSelectionChange,
+    onColumnFiltersChange,
+  };
+  let table = createSvelteTable(tableOptions);
 </script>
 
 <div class="m-2 grid grid-cols-3 items-center">
@@ -62,13 +83,4 @@
   </h1>
   <UniqueMonsterActions {toggleComplete} {table} bind:showCompleted></UniqueMonsterActions>
 </div>
-<DataTable
-  data={mergedUniqueMonsters}
-  {columns}
-  {onRowSelectionChange}
-  {onSortingChange}
-  {onColumnFiltersChange}
-  state={tableState}
-  bind:table
-  {rowClassesFn}
-></DataTable>
+<DataTable {table} {rowClassesFn}></DataTable>

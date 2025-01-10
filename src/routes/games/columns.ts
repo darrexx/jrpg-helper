@@ -4,7 +4,7 @@ import { createRawSnippet } from 'svelte';
 import TableActions from './table-actions.svelte';
 
 //Todo: Add Stats: Count of Monster / Sidequests
-type Game = {
+export type Game = {
   id: number;
   name: string;
   wikiLink: string;
