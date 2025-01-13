@@ -3,7 +3,13 @@
   import { NotebookPen } from 'lucide-svelte';
   import { page } from '$app/state';
   import { localStore } from '$lib/localstorage.svelte';
-  import Textarea from './ui/textarea/textarea.svelte';
+  import { Tipex } from '@friendofsvelte/tipex';
+
+  import '@friendofsvelte/tipex/styles/Tipex.css';
+  import '@friendofsvelte/tipex/styles/ProseMirror.css';
+  import '@friendofsvelte/tipex/styles/Controls.css';
+  import '@friendofsvelte/tipex/styles/EditLink.css';
+  import '@friendofsvelte/tipex/styles/CodeBlock.css';
 
   const isGamePage = $derived(page.route.id?.includes('games') ?? false);
 
@@ -18,12 +24,15 @@
     <Sheet.Header>
       <Sheet.Title class="text-3xl">Notes</Sheet.Title>
       {#if id != -1}
-        <Textarea
+        <Tipex
           class="h-[50rem]"
-          oninput={(e) => {
-            note.value = e.currentTarget.value;
+          onupdate={(e) => {
+            note.value = e.editor.getHTML();
           }}
-          value={note.value}
+          body={note.value}
+          controls
+          floating
+          focal
         />
       {:else}
         <Sheet.Description>
