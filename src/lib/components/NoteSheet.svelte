@@ -31,9 +31,10 @@
           }}
           body={note.value}
           controls
-          floating
           focal
-        />
+        >
+          {#snippet utilities()}{/snippet}
+        </Tipex>
       {:else}
         <Sheet.Description>
           <p>Here you can take Notes for a Game.</p>
