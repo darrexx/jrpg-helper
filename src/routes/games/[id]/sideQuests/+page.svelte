@@ -77,7 +77,7 @@
 </script>
 
 <div class="m-2 grid grid-cols-3 items-center">
-  <div></div>
+  <div>Incomplete: {table.getRowCount()} / {sideQuests.length}</div>
   <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight lg:text-5xl">
     {data.gameName}
   </h1>
